@@ -1,26 +1,29 @@
 package entities;
 
-public sealed class Animal permits Aquatic, Terrestrial{
+public sealed class Animal permits Aquatic, Terrestrial {
 
-    //Attributs
+    // Attributs
     protected String family, name;
     protected int age;
     protected boolean mammal;
 
-    //Constructeurs
-    public Animal(){}
-    public Animal(String fam, String na, int ag, boolean mammal){
+    // Constructeurs
+    public Animal() {
+    }
+
+    public Animal(String fam, String na, int ag, boolean mammal) {
         this.family = fam;
         this.name = na;
         this.age = ag;
         this.mammal = mammal;
     }
-    //Getters and setters
-    public String getFamily(){
+
+    // Getters and setters
+    public String getFamily() {
         return this.family;
     }
 
-    public void setFamily(String family){
+    public void setFamily(String family) {
         this.family = family;
     }
 
@@ -37,10 +40,9 @@ public sealed class Animal permits Aquatic, Terrestrial{
     }
 
     public void setAge(int age) {
-        if(age > 0)
-        {
+        if (age > 0) {
             this.age = age;
-        }else {
+        } else {
             System.out.println("Age ne peut pas etre negatif!");
         }
     }
@@ -50,17 +52,18 @@ public sealed class Animal permits Aquatic, Terrestrial{
     }
 
     public void setMammal(boolean mammal) {
-        mammal = mammal;
+        this.mammal = mammal;
     }
 
-    //Display
-    public void displayAnimal(){
-        System.out.println("Family = " + this.family + "\nName = " + this.name + "\nAge = "+ this.age);
+    // Display
+    public void displayAnimal() {
+        System.out.println("Family = " + this.family + "\nName = " + this.name + "\nAge = " + this.age);
     }
 
-    //Display
+    // Display
     @Override
     public String toString() {
-        return "Animal{Family = " + this.family + "\nName = " + this.name + "\nAge = "+ this.age + "\nMamifere = s" + this.mammal+"}";
+        return "Animal{Family = " + this.family + "\nName = " + this.name + "\nAge = " + this.age + "\nMamifere = s"
+                + this.mammal + "}";
     }
 }

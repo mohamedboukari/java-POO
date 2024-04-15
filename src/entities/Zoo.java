@@ -1,5 +1,7 @@
 package entities;
 
+import exceptions.ZooFullException;
+
 import java.util.Arrays;
 
 public class Zoo {
@@ -19,20 +21,24 @@ public class Zoo {
     }
 
     //Methods
-    public boolean addAnimal(Animal animal){
-        if(searchAnimal(animal) == -1 && !isZooFull()){
-            for (int i = 0; i < animals.length; i++) {
-                if(animals[i] == null){
-                    animals[i] = animal;
-                    System.out.println("Animal added successfully!");
-                    nbrAnimals++;
-                    return true;
+    public void addAnimal(Animal animal) throws ZooFullException{
+        try{
+            if(searchAnimal(animal) == -1){
+                for (int i = 0; i < animals.length; i++) {
+                    if(animals[i] == null){
+                        animals[i] = animal;
+                        System.out.println("Animal added successfully!");
+                        nbrAnimals++;
+                    }
                 }
+            }else{
+                System.out.println("Animal already exists!");
             }
-        }else{
-            System.out.println("Animal already exists!");
+        }catch (Exception e){
+            throw new ZooFullException("Zoo is already full!");
         }
-        return false;
+
+
     }
 
     public void addAquatic(Aquatic aq){
