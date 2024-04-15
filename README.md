@@ -52,4 +52,4 @@ Des ressources supplémentaires, y compris des lectures recommandées, des tutor
 
 N'hésitez pas à poser des questions ou à contribuer aux discussions dans les sections dédiées du référentiel.
 
-*Ce référentiel est maintenu par [mouhamedboukari] 
+*Ce référentiel est maintenu par [[mouhamedboukari](https://github.com/mohamedboukari)] 
