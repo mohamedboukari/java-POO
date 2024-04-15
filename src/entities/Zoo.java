@@ -8,6 +8,7 @@ public class Zoo {
     private String name, city;
     private final int NBR_CAGES = 3;
     private Animal[] animals;
+    private Aquatic[] aquaticAnimals = new Aquatic[10];
     private int nbrAnimals = 0;
 
     //Constructeurs
@@ -34,6 +35,14 @@ public class Zoo {
         return false;
     }
 
+    public void addAquatic(Aquatic aq){
+        for (int i = 0; i< aquaticAnimals.length; i++) {
+            if(aquaticAnimals[i] == null){
+                aquaticAnimals[i] = aq;
+                return;
+            }
+        }
+    }
     //Remove
     public boolean removeAnimal(Animal a){
         int index = searchAnimal(a);
@@ -83,6 +92,36 @@ public class Zoo {
         return false;
     }
 
+    public float maxPenguinSwimmingDepth(){
+        float max = 0;
+        for (Aquatic aq: aquaticAnimals) {
+            if(aq instanceof Penguin p && aq != null){
+                if(p.getSwimmingDepth() > max)
+                    max = p.getSwimmingDepth();
+            }
+        }
+
+        return max;
+    }
+
+    public void displayNumberOfAquaticsByType(){
+        int nbrDolphins = 0;
+        int nbrPenguins = 0;
+
+        for (Aquatic aq: aquaticAnimals) {
+
+            if(aq instanceof Dolphin){
+                nbrDolphins++;
+            }
+            if(aq instanceof Penguin){
+                nbrPenguins++;
+            }
+
+        }
+        System.out.println("Penguins = " + nbrPenguins +"\nDolphins = " + nbrDolphins);
+
+    }
+
     //Getters and setters
     public String getName() {
         return name;
@@ -95,6 +134,10 @@ public class Zoo {
             System.out.println("Le nom du Zoo ne peut pas etre vide!");
         }
 
+    }
+
+    public Aquatic[] getAquaticAnimals() {
+        return aquaticAnimals;
     }
 
     public Animal[] getAnimals() {
@@ -115,7 +158,7 @@ public class Zoo {
         return "Zoo{" +
                 "name='" + name + '\'' +
                 ", city='" + city + '\'' +
-                ", animals=" + Arrays.toString(animals) +
+                ", animals=" + Arrays.toString(aquaticAnimals) +
                 '}';
     }
 }

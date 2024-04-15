@@ -23,4 +23,17 @@ public non-sealed abstract class Aquatic extends Animal{
                 "habitat : "+ this.habitat + "]"
                 ;
     }
+
+    //a1.equals(a2);
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null){
+            return false;
+        }
+        if(obj instanceof Aquatic aquatic){
+            return this.name.equals(aquatic.name) && this.age == aquatic.age && this.habitat.equals(aquatic.habitat);
+        }
+
+        return false;
+    }
 }

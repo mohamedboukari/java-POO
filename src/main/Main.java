@@ -34,14 +34,36 @@ public class Main {
 
         //Prosit 5
         Terrestrial t1 = new Terrestrial();
-        //Aquatic aq1 = new Aquatic("Baleine", "Willy", 30, true, "Eaux froides");
+        Aquatic aq1 = new Dolphin("Baleine", "Willy", 30, true, "Eaux froides", 30);
         //System.out.println(aq1);
         //aq1.swim();
         Dolphin d1 = new Dolphin("DODO", "Willy", 30, true, "Eaux froides", 80f);
         //System.out.println(d1);
-        d1.swim();
+        //d1.swim();
         Penguin p1 = new Penguin("POPO", "Willy", 30, true, "Eaux froides", 100f);
+        Penguin p2 = new Penguin("POPO", "Willy1", 30, true, "Eaux froides", 200f);
+        Penguin p3 = new Penguin("POPO", "Willy2", 30, true, "Eaux froides", 80f);
+
+
         //System.out.println(p1);
-        p1.swim();
+        //p1.swim();
+
+        myZoo.addAquatic(aq1);
+        myZoo.addAquatic(d1);
+        myZoo.addAquatic(p1);
+        myZoo.addAquatic(p2);
+        myZoo.addAquatic(p3);
+        System.out.println("######################## ");
+        //System.out.println(myZoo);
+        /*for (Aquatic aq: myZoo.getAquaticAnimals()
+             ) {
+
+            aq.swim();
+
+        }
+        */
+        //System.out.println(myZoo.maxPenguinSwimmingDepth());
+        myZoo.displayNumberOfAquaticsByType();
+        System.out.println(p1.equals(p2));
     }
 }
