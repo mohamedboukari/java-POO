@@ -1,12 +1,14 @@
+package entities;
+
 import java.util.Arrays;
 
 public class Zoo {
 
     //Attributs
-    String name, city;
-    final int NBR_CAGES = 3;
-    Animal[] animals;
-    int nbrAnimals = 0;
+    private String name, city;
+    private final int NBR_CAGES = 3;
+    private Animal[] animals;
+    private int nbrAnimals = 0;
 
     //Constructeurs
     public Zoo(String name, String city) {
@@ -16,7 +18,7 @@ public class Zoo {
     }
 
     //Methodes
-    boolean addAnimal(Animal animal){
+    public boolean addAnimal(Animal animal){
         if(searchAnimal(animal) == -1 && !isZooFull()){
             for (int i = 0; i < animals.length; i++) {
                 if(animals[i] == null){
@@ -32,7 +34,7 @@ public class Zoo {
         return false;
     }
     //Remove
-    boolean removeAnimal(Animal a){
+    public boolean removeAnimal(Animal a){
         int index = searchAnimal(a);
         if(index > -1){
             if(index != animals.length-1){
@@ -50,10 +52,10 @@ public class Zoo {
         return false;
     }
     //Search
-    int searchAnimal(Animal a) {
+    public int searchAnimal(Animal a) {
         for (int i = 0; i < nbrAnimals; i++) {
             if(animals[i] != null){
-                if(animals[i].name == a.name){
+                if(animals[i].getName() == a.getName()){
                     return i;
                 }
             }
@@ -61,7 +63,7 @@ public class Zoo {
         return -1;
     }
 
-    static Zoo comparerZoo(Zoo z1, Zoo z2){
+    public static Zoo comparerZoo(Zoo z1, Zoo z2){
         if (z1.nbrAnimals > z2.nbrAnimals){
             return z1;
         }else if (z1.nbrAnimals < z2.nbrAnimals){
@@ -71,12 +73,38 @@ public class Zoo {
         return z1;
     }
     //
-    boolean isZooFull(){
+    public boolean isZooFull(){
         if(nbrAnimals == animals.length){
             return true;
         }
 
         return false;
+    }
+
+    //Getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if(name != ""){
+            this.name = name;
+        }else{
+            System.out.println("Le nom du Zoo ne peut pas etre vide!");
+        }
+
+    }
+
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     //Display

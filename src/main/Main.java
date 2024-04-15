@@ -1,11 +1,16 @@
+package main;
+
+import entities.Animal;
+import entities.Zoo;
+
 public class Main {
     public static void main(String[] args) {
         //Obj1
         Animal a = new Animal();
-        a.family = "Lion";
-        a.name = "Simba";
-        a.age = 15;
-        a.isMammal = true;
+        a.setFamily("Lion");
+        a.setName("Simba");
+        a.setAge(15);
+        a.setMammal(true);
 
         //Obj2
         Animal a1 = new Animal("Lion1", "Simba1", 50, true);
