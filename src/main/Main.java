@@ -1,7 +1,6 @@
 package main;
 
-import entities.Animal;
-import entities.Zoo;
+import entities.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,5 +31,17 @@ public class Main {
         //System.out.println((myZoo.removeAnimal(a)));
         System.out.println("Le zoo est full : " + myZoo.isZooFull());
         System.out.println("Le Zoo ayant le plus d'animaux = " + Zoo.comparerZoo(myZoo, myZoo1));
+
+        //Prosit 5
+        Terrestrial t1 = new Terrestrial();
+        //Aquatic aq1 = new Aquatic("Baleine", "Willy", 30, true, "Eaux froides");
+        //System.out.println(aq1);
+        //aq1.swim();
+        Dolphin d1 = new Dolphin("DODO", "Willy", 30, true, "Eaux froides", 80f);
+        //System.out.println(d1);
+        d1.swim();
+        Penguin p1 = new Penguin("POPO", "Willy", 30, true, "Eaux froides", 100f);
+        //System.out.println(p1);
+        p1.swim();
     }
 }

@@ -1,11 +1,11 @@
 package entities;
 
-public class Animal {
+public sealed class Animal permits Aquatic, Terrestrial{
 
     //Attributs
-    private String family, name;
-    private int age;
-    private boolean mammal;
+    protected String family, name;
+    protected int age;
+    protected boolean mammal;
 
     //Constructeurs
     public Animal(){}

@@ -17,7 +17,7 @@ public class Zoo {
         this.animals = new Animal[NBR_CAGES];
     }
 
-    //Methodes
+    //Methods
     public boolean addAnimal(Animal animal){
         if(searchAnimal(animal) == -1 && !isZooFull()){
             for (int i = 0; i < animals.length; i++) {
@@ -33,6 +33,7 @@ public class Zoo {
         }
         return false;
     }
+
     //Remove
     public boolean removeAnimal(Animal a){
         int index = searchAnimal(a);
@@ -51,6 +52,7 @@ public class Zoo {
 
         return false;
     }
+
     //Search
     public int searchAnimal(Animal a) {
         for (int i = 0; i < nbrAnimals; i++) {
