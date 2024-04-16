@@ -1,5 +1,7 @@
 package entities;
 
+import enums.Food;
+
 public class Dolphin extends Aquatic{
     //att
     private float swimmingSpeed;
@@ -28,5 +30,10 @@ public class Dolphin extends Aquatic{
                 "habitat : "+ this.habitat + ",\n" +
                 "Speed : "+ this.swimmingSpeed + "]"
                 ;
+    }
+
+    @Override
+    public void eatMeat(Food meat) {
+        System.out.println("Dolphin eating " + meat);
     }
 }

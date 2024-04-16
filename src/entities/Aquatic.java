@@ -1,6 +1,9 @@
 package entities;
 
-public non-sealed abstract class Aquatic extends Animal{
+import enums.Food;
+import interfaces.Carnivore;
+
+public non-sealed abstract class Aquatic extends Animal implements Carnivore<Food> {
     //att
     protected String habitat;
 
